@@ -1,0 +1,86 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content:  center;
+    background: #e0e4ee;
+    perspective: 1000px;
+    margin-left: 500px;
+}
+
+.book{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.book:hover .cover{
+    transform: rotateX(20deg) rotateY(180deg);
+}
+.book:hover .page{
+    transform: rotateX(20deg) rotateY(180deg);
+    z-index: 2;
+}
+.cover{
+    z-index: 1;
+    transition: all 3s;
+}
+.back-cover{
+    z-index: -2;
+}
+    
+.cover,
+.back-cover{
+    height: 820px;
+    width: 720px;
+    background-color: #152238;
+    border-radius: 2px 20px 20px 2px;
+    position: absolute;
+    box-shadow: 2px 2px 10px gray;
+    transform: rotatex(20deg);
+    transform-origin: center left;
+}
+.page,
+.last-page{
+    height: 800px;
+    width: 710px;
+    background: white ;
+    position: absolute;
+    border-radius: 2px 10px 10px 2px;
+    transform: rotatex(20deg);
+    transform-origin: center left;
+    z-index: -1;
+    
+    
+}
+.page:nth-child(2){
+    transition-duration: 3s;
+}
+.page:nth-child(3){
+    transition-duration: 2.6s;
+}
+.page:nth-child(4){
+    transition-duration: 2.2s;
+}
+
+.book:hover .page:nth-child(2){
+    transition-duration: 6s;
+}
+
+.book:hover .page:nth-child(3){
+    transition-duration: 5.6s;
+}
+.book:hover .page:nth-child(4){
+    transition-duration: 5.2s;
+}
+.last-page{
+    text-align: center;
+    font-size: 15px;
+    position: relative;
+    z-index: -1;
+}
